@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './App.css'
 
 function App() {
@@ -59,7 +60,7 @@ function App() {
           Now make it self-driving with Tropiflo.
         </p>
         <p className="tertiary-text">
-          <a href="/blog" className="link-button">blog</a>{' '}
+          <Link to="/blog" className="link-button">blog</Link>{' '}
           <a href="mailto:info@tropiflo.io?subject=Careers Inquiry" className="link-button">careers</a>{' '}
           <a href="mailto:info@tropiflo.io?subject=Corporate Inquiry" className="link-button">corporate</a>
         </p>
