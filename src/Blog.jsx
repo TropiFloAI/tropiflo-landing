@@ -9,7 +9,7 @@ function Blog() {
       description: "Exploring the fascinating intersection of biological systems and market dynamics, where a simple fruit fly's behavior patterns revealed unexpected insights into trading strategies and market inefficiencies.",
       link: "https://medium.com/@oz.kilim/the-buzz-on-wall-street-how-a-fruit-fly-outsmarted-the-market-4a2a2bd28c7e",
       date: "October 15, 2024",
-      image: "/images/sly.webp"
+      image: `${import.meta.env.BASE_URL}images/sly.webp`
     }
   ]
 
