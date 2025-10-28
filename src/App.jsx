@@ -62,7 +62,7 @@ function App() {
         <p className="tertiary-text">
           <Link to="/blog" className="link-button">blog</Link>{' '}
           <a href="mailto:info@tropiflo.io?subject=Careers Inquiry" className="link-button">careers</a>{' '}
-          <a href="mailto:info@tropiflo.io?subject=Corporate Inquiry" className="link-button">corporate</a>
+          <a href="mailto:Sales@tropiflo.io?subject=Corporate Inquiry" className="link-button">corporate</a>
         </p>
       </div>
     </div>
