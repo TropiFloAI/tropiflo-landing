@@ -9,30 +9,16 @@
   justify-content: center;
 }
 
-.gradient {
+.shader-canvas {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(ellipse at center, rgba(44, 61, 219, 0.4) 0%, rgba(44, 61, 219, 0.2) 40%, transparent 70%);
+  inset: 0;
   z-index: 1;
-}
-
-.noise {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.065;
-  z-index: 2;
   pointer-events: none;
 }
 
 .content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   max-width: 1200px;
   padding: 0 2rem;
   text-align: left;
@@ -48,6 +34,24 @@
   margin-bottom: 1.5rem;
   text-align: left;
 }
+
+.headline {
+  line-height: 1.08;
+  max-width: min(34ch, 92vw);
+}
+
+.headline-large {
+  display: inline-block;
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  letter-spacing: -0.015em;
+}
+
+.headline-medium {
+  display: inline-block;
+  font-size: clamp(2.22rem, 5.15vw, 3.85rem);
+  letter-spacing: -0.008em;
+}
+
 
 .secondary-text {
   font-size: clamp(1.1rem, 2.2vw, 1.6rem);
@@ -67,7 +71,8 @@
   line-height: 1.7;
   letter-spacing: 0.01em;
   max-width: 800px;
-  margin: 0 auto 2.5rem;
+  margin: 0 0 2.5rem 0;
+  text-align: left;
   font-family: 'Manrope', sans-serif;
 }
 

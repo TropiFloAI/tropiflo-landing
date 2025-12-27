@@ -1,63 +1,66 @@
-import { useEffect, useRef } from 'react'
+import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
 import { Link } from 'react-router-dom'
 import './App.css'
 
 function App() {
-  const canvasRef = useRef(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const ctx = canvas.getContext('2d')
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-
-    let animationId
-
-    const createNoise = () => {
-      const imageData = ctx.createImageData(canvas.width, canvas.height)
-      const buffer = new Uint32Array(imageData.data.buffer)
-      const len = buffer.length
-
-      for (let i = 0; i < len; i++) {
-        if (Math.random() < 0.5) {
-          const noise = Math.random() * 255
-          buffer[i] = (255 << 24) | (noise << 16) | (noise << 8) | noise
-        }
-      }
-
-      ctx.putImageData(imageData, 0, 0)
-    }
-
-    const animate = () => {
-      createNoise()
-      animationId = requestAnimationFrame(animate)
-    }
-
-    animate()
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-      if (animationId) cancelAnimationFrame(animationId)
-    }
-  }, [])
-
   return (
     <div className="container">
-      <canvas ref={canvasRef} className="noise"></canvas>
-      <div className="gradient"></div>
+      <ShaderGradientCanvas
+        className="shader-canvas"
+        pixelDensity={1}
+        fov={45}
+        style={{ position: 'absolute', inset: 0 }}
+      >
+        <ShaderGradient
+          animate="on"
+          axesHelper="off"
+          bgColor1="#000000"
+          bgColor2="#000000"
+          brightness={1}
+          cAzimuthAngle={180}
+          cDistance={2.8}
+          cPolarAngle={80}
+          cameraZoom={9.1}
+          color1="#606080"
+          color2="#8d7dca"
+          color3="#212121"
+          destination="onCanvas"
+          embedMode="off"
+          envPreset="city"
+          format="gif"
+          frameRate={10}
+          gizmoHelper="hide"
+          grain="on"
+          lightType="3d"
+          pixelDensity={1}
+          positionX={0}
+          positionY={0}
+          positionZ={0}
+          range="disabled"
+          rangeEnd={40}
+          rangeStart={0}
+          reflection={0.1}
+          rotationX={50}
+          rotationY={0}
+          rotationZ={-60}
+          shader="defaults"
+          type="waterPlane"
+          uAmplitude={0}
+          uDensity={1.5}
+          uFrequency={0}
+          uSpeed={0.3}
+          uStrength={1.5}
+          uTime={8}
+          wireframe={false}
+        />
+      </ShaderGradientCanvas>
       <div className="content">
-        <h1>Stop maintaining.<br />Start discovering.</h1>
+        <h1 className="headline">
+          <span className="headline-large">Reputation is everything.</span><br />
+          <span className="headline-medium">Systematize judgment — Reduce risk.</span>
+        </h1>
         <p className="secondary-text-2">
-          You've built a quant lab.<br />
-          Now make it self-driving with Tropiflo.
+          Tropiflo reduces research risk by making code, configuration, and judgment part of a single, reproducible system.
         </p>
         <p className="tertiary-text">
           <Link to="/blog" className="link-button">blog</Link>{' '}
