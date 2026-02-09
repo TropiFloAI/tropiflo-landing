@@ -16,7 +16,7 @@ function App() {
           axesHelper="off"
           bgColor1="#000000"
           bgColor2="#000000"
-          brightness={1}
+          brightness={0.6}
           cAzimuthAngle={180}
           cDistance={2.8}
           cPolarAngle={80}
@@ -28,6 +28,7 @@ function App() {
           embedMode="off"
           envPreset="city"
           format="gif"
+          fov={45}
           frameRate={10}
           gizmoHelper="hide"
           grain="on"
@@ -56,11 +57,11 @@ function App() {
       </ShaderGradientCanvas>
       <div className="content">
         <h1 className="headline">
-          <span className="headline-large">Reputation is everything.</span><br />
-          <span className="headline-medium">Systematize judgment — Reduce risk.</span>
+          <span className="headline-large">Basic model in.</span><br />
+          <span className="headline-medium">Novel model out.</span>
         </h1>
         <p className="secondary-text-2">
-          Tropiflo reduces research risk by making code, configuration, and judgment part of a single, reproducible system.
+          Through scalable, deep research, we enhance and improve your models to reach their absolute peak.
         </p>
         <p className="tertiary-text">
           <Link to="/blog" className="link-button">blog</Link>{' '}
